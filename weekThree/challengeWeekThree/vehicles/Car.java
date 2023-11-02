@@ -22,12 +22,13 @@ public class Car extends Vehicle implements Promotion {
 
     @Override
     public void applyDiscount(double value) {
-        if (value == this.getPrice() *0.5){
+        double discount = this.getPrice() * 0.1;
+        if (value <= discount) {
             double newPrice = this.getPrice() - value;
             this.setPrice(newPrice);
-            System.out.println("Discount denied error!");
-        }else {
-            System.out.println("Discount made successfully, the value is now: " + value);
+            System.out.println("Discount of 10% successfully applied to plate: "+ getPlate() +", the new value is now: " + newPrice);
+        } else {
+            System.out.println("Discount denied error for plate: "+getPlate()+", The provided discount value is not 10% of the price.");
         }
     }
 }

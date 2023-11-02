@@ -15,6 +15,7 @@ public class Resale {
             vehicleCount++;
         }else {
             System.out.println("Full resale, " + vehicle.getPlate() + " unable to register!");
+            System.out.println("-------------------------------------------------------");
         }
     }
     public void removeVehicles(String plate){
@@ -27,10 +28,12 @@ public class Resale {
                 vehicles[vehicleCount - 1] = null;
                 vehicleCount--;
                 System.out.println("Vehicle with plate " + plate + " removed.");
+                System.out.println("------------------------------------------");
                 return;
             }
         }
         System.out.println("Vehicle with plate " + plate + " not found.");
+        System.out.println("-----------------------------------------------");
     }
 
     public void listVehicle(){

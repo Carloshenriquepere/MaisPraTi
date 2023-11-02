@@ -29,7 +29,8 @@ public class Main {
 
         resale.listVehicle();
 
-        resale.discountForVehicles("IVV0084",1500);
+        resale.discountForVehicles("IVV0084",0.300);//To get the discount I need to enter '0.' if it is less than a thousand
+        resale.discountForVehicles("IVV7323",4.600);
 
 
 
