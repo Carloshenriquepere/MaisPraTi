@@ -1,7 +1,7 @@
-package weekTwo.challengeWeekTwo;
+package weekTwo_IntroductionToPOO.challengeWeekTwo;
 
-import weekTwo.challengeWeekTwo.classes.Class;
-import weekTwo.challengeWeekTwo.students.Student;
+import weekTwo_IntroductionToPOO.challengeWeekTwo.classes.Class;
+import weekTwo_IntroductionToPOO.challengeWeekTwo.students.Student;
 
 public class Main {
     public static void main(String[] args) {

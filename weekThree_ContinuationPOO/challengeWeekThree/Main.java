@@ -1,9 +1,9 @@
-package weekThree.challengeWeekThree;
+package weekThree_ContinuationPOO.challengeWeekThree;
 
-import weekThree.challengeWeekThree.sales.Resale;
-import weekThree.challengeWeekThree.vehicles.Car;
-import weekThree.challengeWeekThree.vehicles.Motorcycle;
-import weekThree.challengeWeekThree.vehicles.Vehicle;
+import weekThree_ContinuationPOO.challengeWeekThree.sales.Resale;
+import weekThree_ContinuationPOO.challengeWeekThree.vehicles.Car;
+import weekThree_ContinuationPOO.challengeWeekThree.vehicles.Motorcycle;
+import weekThree_ContinuationPOO.challengeWeekThree.vehicles.Vehicle;
 
 public class Main {
     public static void main(String[] args) {

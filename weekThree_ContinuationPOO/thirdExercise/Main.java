@@ -1,7 +1,7 @@
-package weekThree.thirdExercise;
+package weekThree_ContinuationPOO.thirdExercise;
 
-import weekThree.thirdExercise.calculators.ScientificCalculator;
-import weekThree.thirdExercise.calculators.SimpleCalculator;
+import weekThree_ContinuationPOO.thirdExercise.calculators.ScientificCalculator;
+import weekThree_ContinuationPOO.thirdExercise.calculators.SimpleCalculator;
 
 public class Main {
     public static void main(String[] args) {

@@ -1,7 +1,7 @@
-package weekTwo.fourthExercise;
+package weekTwo_IntroductionToPOO.fourthExercise;
 
-import weekTwo.fourthExercise.categoriesProducts.CategoryProduct;
-import weekTwo.fourthExercise.products.Product;
+import weekTwo_IntroductionToPOO.fourthExercise.categoriesProducts.CategoryProduct;
+import weekTwo_IntroductionToPOO.fourthExercise.products.Product;
 
 public class Main {
     public static void main(String[] args) {

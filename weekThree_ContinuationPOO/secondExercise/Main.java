@@ -1,7 +1,7 @@
-package weekThree.secondExercise;
+package weekThree_ContinuationPOO.secondExercise;
 
-import weekThree.secondExercise.animals.Cat;
-import weekThree.secondExercise.animals.Dog;
+import weekThree_ContinuationPOO.secondExercise.animals.Cat;
+import weekThree_ContinuationPOO.secondExercise.animals.Dog;
 
 public class Main {
     public static void main(String[] args) {

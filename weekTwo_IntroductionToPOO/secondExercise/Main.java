@@ -1,6 +1,6 @@
-package weekTwo.secondExercise;
+package weekTwo_IntroductionToPOO.secondExercise;
 
-import weekTwo.secondExercise.bankAccount.Account;
+import weekTwo_IntroductionToPOO.secondExercise.bankAccount.Account;
 
 public class Main {
     public static void main(String[] args) {

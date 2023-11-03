@@ -1,6 +1,6 @@
-package weekTwo.fifthExercise;
+package weekTwo_IntroductionToPOO.fifthExercise;
 
-import weekTwo.fifthExercise.calculator.Calculations;
+import weekTwo_IntroductionToPOO.fifthExercise.calculator.Calculations;
 
 public class Main {
     public static void main(String[] args) {

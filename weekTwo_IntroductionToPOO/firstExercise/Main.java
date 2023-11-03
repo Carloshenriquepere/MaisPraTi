@@ -1,6 +1,6 @@
-package weekTwo.firstExercise;
+package weekTwo_IntroductionToPOO.firstExercise;
 
-import weekTwo.firstExercise.classStudents.Student;
+import weekTwo_IntroductionToPOO.firstExercise.classStudents.Student;
 
 public class Main {
     public static void main(String[] args) {

@@ -1,8 +1,8 @@
-package weekThree.fourthExercise;
+package weekThree_ContinuationPOO.fourthExercise;
 
-import weekThree.fourthExercise.designs.Artist;
-import weekThree.fourthExercise.shapes.Circle;
-import weekThree.fourthExercise.shapes.Square;
+import weekThree_ContinuationPOO.fourthExercise.designs.Artist;
+import weekThree_ContinuationPOO.fourthExercise.shapes.Circle;
+import weekThree_ContinuationPOO.fourthExercise.shapes.Square;
 
 public class Main {
     public static void main(String[] args) {
