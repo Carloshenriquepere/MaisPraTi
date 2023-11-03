@@ -1,6 +1,6 @@
-package weekTwo.thirdExercise;
+package weekTwo_IntroductionToPOO.thirdExercise;
 
-import weekTwo.thirdExercise.books.Book;
+import weekTwo_IntroductionToPOO.thirdExercise.books.Book;
 
 public class Library {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package weekOne.secondExercise;
+package weekOne_IntroductionToJava.secondExercise;
 
 import java.util.Scanner;
 

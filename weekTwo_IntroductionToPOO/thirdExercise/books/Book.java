@@ -1,4 +1,4 @@
-package weekTwo.thirdExercise.books;
+package weekTwo_IntroductionToPOO.thirdExercise.books;
 
 import java.util.Objects;
 
