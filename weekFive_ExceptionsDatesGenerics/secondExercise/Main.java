@@ -38,9 +38,10 @@ public class Main {
         library.lendBook(book2,user);
         library.lendBook(book6,user);
 
+        library.lendBook(book6,user1);
         library.lendBook(book1,user1);
 
-        System.out.println(user.getBooksRented());
+        System.out.println(user.getBooksRented(user));//Preciso implementar uma lógica que retorna o nome do usário que esta alugando e o valor!
         System.out.println(library.listCollectionBooks());
     }
 }

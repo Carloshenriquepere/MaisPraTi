@@ -27,19 +27,28 @@ public class Library {
             if (book.isBorrowed()){
                 throw new BookUnavailable();
             }else {
-                user.getBooksRented();
-                System.out.println("--------------");
-                System.out.println("Book " + book.getName()+ " was loaned to "+ user.getName());
+                pickUpBook(user, book);
+                user.getBooksRented(user).add(book);
+
+                System.out.println("Book " + book.getNameBook()+ " was loaned to "+ user.getName());
+                System.out.println("----------------------------");
             }
 
-        }catch (LimitExceededException e){
+        }catch (LimitExceededException | BookUnavailable e){
             System.out.println("---------------");
-            System.out.println("Error when lending book " + e.getMessage());
+            System.out.println("Error when lending " + e.getMessage());
+            System.out.println("---------------------");
 
-        }catch (BookUnavailable e){
-            System.out.println("---------------");
-            System.out.println("Error when lending book " + e.getMessage());
+        }
 
+    }
+
+    public void pickUpBook(User user, Book book){
+        if (user.getBooksRented(user).size() < 5){
+            user.getBooksRented(user).add(book);
+            book.setBorrowed();
+        }else {
+            throw new LimitExceededException();
         }
 
     }

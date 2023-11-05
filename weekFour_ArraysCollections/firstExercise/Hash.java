@@ -37,7 +37,7 @@ public class Hash {
             System.out.println("Player "+currentPlayer +" it's your turn");
             int positionChosen = sc.nextInt();
 
-            if (positionChosen < 1 && positionChosen > 9){
+            if (positionChosen < 1 || positionChosen > 9){
                 System.out.println("Invalid position!");
                 continue;
             }

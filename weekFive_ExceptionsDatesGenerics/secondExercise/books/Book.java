@@ -1,21 +1,23 @@
 package weekFive_ExceptionsDatesGenerics.secondExercise.books;
 
-public class Book {
+import weekFive_ExceptionsDatesGenerics.secondExercise.users.User;
 
-    private String name;
+public class Book  extends User {
+
+    private String nameBook;
     private boolean borrowed;
 
-    public Book(String name) {
-        this.name = name;
+    public Book(String nameBook) {
+        this.nameBook = nameBook;
         this.borrowed = false;
     }
 
-    public String getName() {
-        return name;
+    public String getNameBook() {
+        return nameBook;
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.nameBook = nameBook;
     }
 
     public boolean isBorrowed() {
@@ -23,15 +25,11 @@ public class Book {
     }
 
     public void setBorrowed() {
-        if (borrowed){
-            this.borrowed = false;
-        }else {
-            this.borrowed = true;
-        }
+        this.borrowed = !borrowed;
     }
 
     @Override
     public String toString() {
-        return "Book " + "name= " + name +  ", Is it on loan? " + isBorrowed() + "\n" ;
+        return "Book " + "name= " + nameBook +  ", Is it on loan? " + isBorrowed() + "\n" ;
     }
 }

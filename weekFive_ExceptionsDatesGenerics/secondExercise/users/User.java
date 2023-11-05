@@ -1,7 +1,6 @@
 package weekFive_ExceptionsDatesGenerics.secondExercise.users;
 
 import weekFive_ExceptionsDatesGenerics.secondExercise.books.Book;
-import weekFive_ExceptionsDatesGenerics.secondExercise.exceptions.LimitExceededException;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -9,6 +8,9 @@ import java.util.Set;
 public class User {
 
     private String name;
+
+    public User() {
+    }
 
     public String getName() {
         return name;
@@ -25,18 +27,8 @@ public class User {
         this.name = name;
     }
 
-    public Set<Book> getBooksRented(){
+    public Set<Book> getBooksRented(User user){
 
         return booksRented;
-    }
-
-    public void pickUpBook(Book book){
-        if (booksRented.size() < 5){
-            this.booksRented.add(book);
-            book.setBorrowed();
-        }else {
-            throw new LimitExceededException();
-        }
-
     }
 }
