@@ -12,14 +12,15 @@ public class Main {
         Reservation reservation2 = new Reservation("02","Caroline","2020/12/10","2021/01/10",1203);
         Reservation reservation3 = new Reservation("03","Alice","2022/06/01","2023/06/10",123);
         Reservation reservation4 = new Reservation("04","Carlos","2023/03/20","2023/04/01",369);
-        Reservation reservation5 = new Reservation("05","Patricia","2023/08/25","2023/09/02",256);
-        Reservation reservation6 = new Reservation("06","Graça","2023/10/15","2023/11/01",1);
+        Reservation reservation5 = new Reservation("05","Patricia","2023/10/16","2023/11/02",1);
+        Reservation reservation6 = new Reservation("05","Graça","2023/10/15","2023/11/01",1);
 
         reservationManager.toAdd(reservation1);
         reservationManager.toAdd(reservation2);
         reservationManager.toAdd(reservation3);
         reservationManager.toAdd(reservation4);
         reservationManager.toAdd(reservation6);
+        reservationManager.toAdd(reservation5);
 
         System.out.println("------------------------------");
 
