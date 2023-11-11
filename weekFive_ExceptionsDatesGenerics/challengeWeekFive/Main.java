@@ -20,12 +20,15 @@ public class Main {
         reservationManager.toAdd(reservation3);
         reservationManager.toAdd(reservation4);
         reservationManager.toAdd(reservation6);
-        reservationManager.toAdd(reservation5);
+//        reservationManager.toAdd(reservation5);
+
+
 
         System.out.println("------------------------------");
 
         System.out.println(reservationManager.search("03"));
         System.out.println(reservationManager.search("01"));
+
 
         System.out.println("------------------------------");
 

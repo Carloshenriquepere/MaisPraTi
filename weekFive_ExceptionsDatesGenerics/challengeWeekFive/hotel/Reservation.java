@@ -1,6 +1,5 @@
 package weekFive_ExceptionsDatesGenerics.challengeWeekFive.hotel;
 
-import java.text.DateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
@@ -15,7 +14,7 @@ public class Reservation {
 
     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd");
 
-    public long BookedDays(String code){
+    public long bookedDays(String code){
         LocalDate dateEntry = LocalDate.parse(checkIn, formatter);
         LocalDate departureDate = LocalDate.parse(checkOut, formatter);
         if (dateEntry != null && departureDate != null){
@@ -36,11 +35,11 @@ public class Reservation {
     @Override
     public String toString() {
         return "Reservation: " +
-                "\nCode: " + code +
-                ",\nName: " + name +
-                ",\nDate Entry: " + checkIn +
-                ",\nDeparture Date: " + checkOut +
-                ",\nRoom: " + room;
+                "\n Code: " + code +
+                ",\n Name: " + name +
+                ",\n Date Entry: " + checkIn +
+                ",\n Departure Date: " + checkOut +
+                ",\n Room: " + room;
     }
 
     public String getCode() {
