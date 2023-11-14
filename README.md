@@ -10,4 +10,6 @@ No segundo módulo aprendi introdução ao POO, qual a sua importância dentro d
 
 No terceiro módulo aprendi mais a fundo a POO o que são Interface, Enum, Record, Herança, Polimorfismo,clases Abstratas e suas respectivas importâncias dentro da aplicação. 
 
-Nesse quarto módulo aprendi sobre Collection e Arrays, e suas interfaces como List, Set, Map e quais as suas funções dentro da aplicação.
+No quarto módulo aprendi sobre Collection e Arrays, e suas interfaces como List, Set, Map e quais as suas funções dentro da aplicação.
+
+No quinto módulo aprendi sobre Exceções, Datas, Genéricos, por que ter uma exceção dentro da aplicação e como criar. como formatar um Data com LocalDate, e a importância do Genéricos e como criar.
