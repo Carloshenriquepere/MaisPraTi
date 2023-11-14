@@ -15,3 +15,5 @@ No quarto módulo aprendi sobre Collection e Arrays, e suas interfaces como List
 No quinto módulo aprendi sobre Exceções, Datas, Genéricos, por que ter uma exceção dentro da aplicação e como criar. como formatar um Data com LocalDate, e a importância do Genéricos e como criar.
 
 No sexto módulo aprendi sobre programação funcional  em Java, como criar métodos usando expressão Lambda e Stream e suas referências.
+
+No sétimo módulo aprendi SQL, o que é o banco de dados como instalar o MariaDB na máquina local, a  criar uma banco de dados, os comandos,SELETE * FROM, CREATE, UPDATE, DELETE, INNER JOY, LEFT JOY, ORDER BY.
