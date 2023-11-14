@@ -13,3 +13,5 @@ No terceiro módulo aprendi mais a fundo a POO o que são Interface, Enum, Recor
 No quarto módulo aprendi sobre Collection e Arrays, e suas interfaces como List, Set, Map e quais as suas funções dentro da aplicação.
 
 No quinto módulo aprendi sobre Exceções, Datas, Genéricos, por que ter uma exceção dentro da aplicação e como criar. como formatar um Data com LocalDate, e a importância do Genéricos e como criar.
+
+No sexto módulo aprendi sobre programação funcional  em Java, como criar métodos usando expressão Lambda e Stream e suas referências.
