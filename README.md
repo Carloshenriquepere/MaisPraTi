@@ -17,3 +17,5 @@ No quinto módulo aprendi sobre Exceções, Datas, Genéricos, por que ter uma e
 No sexto módulo aprendi sobre programação funcional  em Java, como criar métodos usando expressão Lambda e Stream e suas referências.
 
 No sétimo módulo aprendi SQL, o que é o banco de dados como instalar o MariaDB na máquina local, a  criar uma banco de dados, os comandos,SELETE * FROM, CREATE, UPDATE, DELETE, INNER JOY, LEFT JOY, ORDER BY.
+
+No oitavo módulo aprendi a como fazer a inserção do MySQL no Java, através da pasta jar, aprendi a usar os métodos como CREATE, UPDATE, DELETE, QUERY dentro do Java e usando classe Connection para conectar ao banco.
