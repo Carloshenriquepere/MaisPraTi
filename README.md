@@ -9,3 +9,5 @@ No primeiro módulo aprendi introdução ao Java, como ele começou, quem criou,
 No segundo módulo aprendi introdução ao POO, qual a sua importância dentro de uma aplicação, quais meses de pacotes e classes adequados para um aplicação.
 
 No terceiro módulo aprendi mais a fundo a POO o que são Interface, Enum, Record, Herança, Polimorfismo,clases Abstratas e suas respectivas importâncias dentro da aplicação. 
+
+Nesse quarto módulo aprendi sobre Collection e Arrays, e suas interfaces como List, Set, Map e quais as suas funções dentro da aplicação.
