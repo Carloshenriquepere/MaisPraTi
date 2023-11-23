@@ -1,4 +1,4 @@
-package weekEightJavaAndMySQL.challengeWeekEight.model;
+package weekEight_JavaAndMySQL.challengeWeekEight.model;
 
 public class Book {
     private StatusBook statusBook;

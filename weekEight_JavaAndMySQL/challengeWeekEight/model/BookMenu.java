@@ -1,6 +1,6 @@
-package weekEightJavaAndMySQL.challengeWeekEight.model;
+package weekEight_JavaAndMySQL.challengeWeekEight.model;
 
-import weekEightJavaAndMySQL.challengeWeekEight.repository.BookRepository;
+import weekEight_JavaAndMySQL.challengeWeekEight.repository.BookRepository;
 
 import java.util.List;
 import java.util.Scanner;
@@ -33,16 +33,17 @@ public class BookMenu {
 
                 case 1:
                     System.out.print("Enter the title of the book:");
-                    String title = sc.nextLine();
                     sc.nextLine();
+                    String title = sc.nextLine();
+
 
                     System.out.print("Enter the author of the book:");
                     String author = sc.nextLine();
-                    sc.nextLine();
+
 
                     System.out.print("Enter the year of publication of the book:");
-                    int publicationDate = sc.nextInt();
-                    sc.nextInt();
+                    int publicationDate = Integer.parseInt(sc.nextLine());
+
 
                     Book newBook = new Book(title,author,publicationDate);
 

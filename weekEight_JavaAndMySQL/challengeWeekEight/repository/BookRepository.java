@@ -1,10 +1,8 @@
-package weekEightJavaAndMySQL.challengeWeekEight.repository;
+package weekEight_JavaAndMySQL.challengeWeekEight.repository;
 
 import com.mysql.cj.exceptions.StreamingNotifiable;
-import weekEightJavaAndMySQL.challengeWeekEight.model.Book;
-import weekEightJavaAndMySQL.challengeWeekEight.model.StatusBook;
-import weekEightJavaAndMySQL.fisrtExercise.src.model.Course;
-import weekEightJavaAndMySQL.fisrtExercise.src.repository.Connects;
+import weekEight_JavaAndMySQL.challengeWeekEight.model.Book;
+import weekEight_JavaAndMySQL.challengeWeekEight.model.StatusBook;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -32,7 +30,7 @@ public class BookRepository implements Methods<Book> {
     @Override
     public void addBooks(Book book) {
         String sql = "INSERT INTO book(title, author, publicationDate, statusBook) VALUES(?, ?, ?, ?)";
-        connection = ConnetcsBook.getConnectsBook();
+        connection = ConnectBook.getConnectsBook();
 
         try (PreparedStatement pstmt = connection.prepareStatement(sql)) {
             pstmt.setString(1, book.getTitle());
@@ -50,14 +48,14 @@ public class BookRepository implements Methods<Book> {
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         } finally {
-            Connects.closeConnects(this.connection);
+            ConnectBook.closeConnectsBook(this.connection);
         }
     }
 
     @Override
     public void rentBook(int id) {
         String sql = "UPDATE book SET statusBook = ? WHERE id = ?";
-        connection = ConnetcsBook.getConnectsBook();
+        connection = ConnectBook.getConnectsBook();
 
         try (PreparedStatement pstmt = connection.prepareStatement(sql)) {
             pstmt.setString(1, "RENTED");
@@ -73,14 +71,14 @@ public class BookRepository implements Methods<Book> {
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         } finally {
-            Connects.closeConnects(this.connection);
+            ConnectBook.closeConnectsBook(this.connection);
         }
     }
 
     @Override
     public void returnBook(int id) {
         String sql = "UPDATE book SET statusBook = ? WHERE id = ?";
-        connection = ConnetcsBook.getConnectsBook();
+        connection = ConnectBook.getConnectsBook();
 
         try (PreparedStatement pstmt = connection.prepareStatement(sql)) {
             pstmt.setString(1, "AVAILABLE");
@@ -96,7 +94,7 @@ public class BookRepository implements Methods<Book> {
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         } finally {
-            Connects.closeConnects(this.connection);
+            ConnectBook.closeConnectsBook(this.connection);
         }
     }
 
@@ -107,7 +105,7 @@ public class BookRepository implements Methods<Book> {
         List<Book> books = new ArrayList<>();
 
         String sql = "SELECT * FROM book WHERE book.statusBook = ?";
-        connection = ConnetcsBook.getConnectsBook();
+        connection = ConnectBook.getConnectsBook();
 
         try (PreparedStatement pstmt = connection.prepareStatement(sql)) {
             pstmt.setString(1, "AVAILABLE");
@@ -126,7 +124,7 @@ public class BookRepository implements Methods<Book> {
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         } finally {
-            Connects.closeConnects(this.connection);
+            ConnectBook.closeConnectsBook(this.connection);
         }
         return books;
     }
@@ -137,7 +135,7 @@ public class BookRepository implements Methods<Book> {
         List<Book> books = new ArrayList<>();
 
         String sql = "SELECT * FROM book WHERE book.statusBook = ?";
-        connection = ConnetcsBook.getConnectsBook();
+        connection = ConnectBook.getConnectsBook();
 
         try (PreparedStatement pstmt = connection.prepareStatement(sql)) {
             pstmt.setString(1, "RENTED");
@@ -156,7 +154,7 @@ public class BookRepository implements Methods<Book> {
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         } finally {
-            Connects.closeConnects(this.connection);
+            ConnectBook.closeConnectsBook(this.connection);
         }
         return books;
     }

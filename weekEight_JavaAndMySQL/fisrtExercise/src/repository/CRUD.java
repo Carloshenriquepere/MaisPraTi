@@ -1,4 +1,4 @@
-package weekEightJavaAndMySQL.fisrtExercise.src.repository;
+package weekEight_JavaAndMySQL.fisrtExercise.src.repository;
 
 import java.util.List;
 

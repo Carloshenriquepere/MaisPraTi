@@ -1,4 +1,4 @@
-package weekEightJavaAndMySQL.fisrtExercise.src.model;
+package weekEight_JavaAndMySQL.fisrtExercise.src.model;
 
 public class Course {
 

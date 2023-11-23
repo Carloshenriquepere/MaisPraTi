@@ -1,10 +1,10 @@
-package weekEightJavaAndMySQL.challengeWeekEight.repository;
+package weekEight_JavaAndMySQL.challengeWeekEight.repository;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class ConnetcsBook {
+public class ConnectBook {
 
     private static final String URL = "jdbc:mysql://localhost:3307/bookstore"; //Connection URL
 

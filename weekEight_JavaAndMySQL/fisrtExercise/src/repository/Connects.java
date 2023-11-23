@@ -1,4 +1,4 @@
-package weekEightJavaAndMySQL.fisrtExercise.src.repository;
+package weekEight_JavaAndMySQL.fisrtExercise.src.repository;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

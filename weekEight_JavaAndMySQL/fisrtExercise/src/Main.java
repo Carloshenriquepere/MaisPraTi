@@ -1,12 +1,8 @@
-package weekEightJavaAndMySQL.fisrtExercise.src;
+package weekEight_JavaAndMySQL.fisrtExercise.src;
 
-import weekEightJavaAndMySQL.fisrtExercise.src.model.Course;
-import weekEightJavaAndMySQL.fisrtExercise.src.model.Student;
-
-import weekEightJavaAndMySQL.fisrtExercise.src.repository.CourseRepository;
-import weekEightJavaAndMySQL.fisrtExercise.src.repository.StudentRepository;
-
-import java.util.List;
+import weekEight_JavaAndMySQL.fisrtExercise.src.model.Student;
+import weekEight_JavaAndMySQL.fisrtExercise.src.repository.CourseRepository;
+import weekEight_JavaAndMySQL.fisrtExercise.src.repository.StudentRepository;
 
 
 public class Main {
@@ -16,7 +12,7 @@ public class Main {
         StudentRepository studentRepo = new StudentRepository();
 
         //Method to Create of Student and Course
-
+//
 //        Student newStudent = new Student();
 //        newStudent.setName("Eduardo Soares");
 //        newStudent.setAge(8);

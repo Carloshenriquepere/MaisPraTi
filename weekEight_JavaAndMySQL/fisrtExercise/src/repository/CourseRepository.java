@@ -1,6 +1,7 @@
-package weekEightJavaAndMySQL.fisrtExercise.src.repository;
+package weekEight_JavaAndMySQL.fisrtExercise.src.repository;
 
-import weekEightJavaAndMySQL.fisrtExercise.src.model.Student;
+import weekEight_JavaAndMySQL.fisrtExercise.src.model.Course;
+
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -9,25 +10,25 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class StudentRepository implements CRUD<Student> {
+public class CourseRepository implements CRUD<Course> {
     private Connection connection;
-
     @Override
-    public void create(Student student) {
+    public void create(Course course) {
 
-        String sql = "INSERT INTO student(name, age) VALUES(?, ?)";
+        String sql = "INSERT INTO course(teacher, matter) VALUES(?, ?)";
         connection = Connects.getConnects();
+
         try(
                 PreparedStatement pstmt = connection.prepareStatement(sql)){
-                pstmt.setString(1, student.getName());
-                pstmt.setInt(2, student.getAge());
+            pstmt.setString(1, course.getTeacher());
+            pstmt.setString(2, course.getMatter());
 
-                int result = pstmt.executeUpdate();
-                if (result > 0){
-                    System.out.println("Successful student registration!");
-                }else {
-                    System.out.println("Error when inserting student!");
-                }
+            int result = pstmt.executeUpdate();
+            if (result > 0){
+                System.out.println("Course added successfully!");
+            }else {
+                System.out.println("Error when inserting course!");
+            }
         }catch(SQLException e){
             System.out.println(e.getMessage());
         }
@@ -36,21 +37,21 @@ public class StudentRepository implements CRUD<Student> {
     }
 
     @Override
-    public void update(Student student) {
+    public void update(Course course) {
 
-        String sql = "UPDATE student SET name = ?, age = ? WHERE id = ?";
+        String sql = "UPDATE course SET teacher = ?, matter = ? WHERE id = ?";
         connection = Connects.getConnects();
         try(
                 PreparedStatement pstmt = connection.prepareStatement(sql)){
-            pstmt.setString(1, student.getName());
-            pstmt.setInt(2, student.getAge());
-            pstmt.setInt(3, student.getId());
+            pstmt.setString(1, course.getTeacher());
+            pstmt.setString(2, course.getMatter());
+            pstmt.setInt(3, course.getId());
 
             int result = pstmt.executeUpdate();
             if (result > 0){
-                System.out.println("Successful update student!");
+                System.out.println("Successful update course!");
             }else {
-                System.out.println("Error when updating student!");
+                System.out.println("Error when updating course!");
             }
         }catch (SQLException e){
             System.out.println(e.getMessage());
@@ -63,16 +64,16 @@ public class StudentRepository implements CRUD<Student> {
     @Override
     public void delete(int id) {
 
-        String sql = "DELETE FROM student WHERE id = " + id;
+        String sql = "DELETE FROM course WHERE id = " + id;
         connection = Connects.getConnects();
 
         try(PreparedStatement pstmt = connection.prepareStatement(sql)){
 
             int result = pstmt.executeUpdate();
             if (result > 0){
-                System.out.println("Successful removal student!");
+                System.out.println("Successful removal course!");
             }else{
-                System.out.println("Error when removing student!");
+                System.out.println("Error when removing course!");
             }
         }catch (SQLException e){
             System.out.println(e.getMessage());
@@ -82,45 +83,46 @@ public class StudentRepository implements CRUD<Student> {
     }
 
     @Override
-    public List<Student> readAll() {
+    public List<Course> readAll() {
 
-        List<Student> students = new ArrayList<>();
-        String sql = "SELECT * FROM student";
+        List<Course> courses = new ArrayList<>();
+        String sql = "SELECT * FROM course";
         connection = Connects.getConnects();
 
         try(PreparedStatement pstmt = connection.prepareStatement(sql)){
             ResultSet rs = pstmt.executeQuery();
 
             while (rs.next()){
-                Student student = new Student();
-                student.setId(rs.getInt("id"));
-                student.setName(rs.getString("name"));
-                student.setAge(rs.getInt("age"));
+                Course course = new Course();
+                course.setId(rs.getInt("id"));
+                course.setTeacher(rs.getString("teacher"));
+                course.setMatter(rs.getString("matter"));
 
-                students.add(student);
+                courses.add(course);
             }
         }catch (SQLException e){
             System.out.println(e.getMessage());
         }
         Connects.closeConnects(this.connection);
 
-        return students;
+        return courses;
     }
 
     @Override
-    public Student readById(int id) {
+    public Course readById(int id) {
 
-        String sql = "SELECT * FROM student WHERE id = " + id;
+        String sql = "SELECT * FROM course WHERE id = " + id;
         connection = Connects.getConnects();
 
         try(PreparedStatement pstmt = connection.prepareStatement(sql)) {
             ResultSet rs = pstmt.executeQuery();
+
             if (rs.next()){
-                Student student = new Student();
-                student.setId(rs.getInt("id"));
-                student.setName(rs.getString("name"));
-                student.setAge(rs.getInt("age"));
-                return student;
+                Course course = new Course();
+                course.setId(rs.getInt("id"));
+                course.setTeacher(rs.getString("teacher"));
+                course.setMatter(rs.getString("matter"));
+                return course;
             }
         }catch (SQLException e){
             System.out.println(e.getMessage());

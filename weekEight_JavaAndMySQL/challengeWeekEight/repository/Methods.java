@@ -1,7 +1,6 @@
-package weekEightJavaAndMySQL.challengeWeekEight.repository;
+package weekEight_JavaAndMySQL.challengeWeekEight.repository;
 
-import weekEightJavaAndMySQL.challengeWeekEight.model.Book;
-import weekEightJavaAndMySQL.challengeWeekEight.model.StatusBook;
+import weekEight_JavaAndMySQL.challengeWeekEight.model.Book;
 
 import java.util.List;
 
