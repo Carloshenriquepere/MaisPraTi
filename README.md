@@ -41,4 +41,4 @@ Nesse curso busco aprender muito sobre Java e Spring para ingressar no mercado d
 
 ---
 
-- No nono módulo aprendi como fazer a página controller com Servlet e JSP, mas não fiz com a IDE eclipse e ApacheTomcat, fiz no meu Intellij usando a versão comunit e usando o Jetty e o MavenWebApp.
+- No nono módulo aprendi como fazer a página controller com Servlet e JSP, mas não fiz com a IDE eclipse e ApacheTomcat, fiz no meu Intellij usando a versão community e usando o Jetty e o MavenWebApp.
