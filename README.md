@@ -40,3 +40,5 @@ Nesse curso busco aprender muito sobre Java e Spring para ingressar no mercado d
 - No oitavo módulo aprendi a como fazer a inserção do MySQL no Java, através da pasta jar, aprendi a usar os métodos como CREATE, UPDATE, DELETE, QUERY dentro do Java e usando classe Connection para conectar ao banco.
 
 ---
+
+- No nono módulo aprendi como fazer a página controller com Servlet e JSP, mas não fiz com a IDE eclipse e ApacheTomcat, fiz no meu Intellij e usando o Jetty e o MavenWep
