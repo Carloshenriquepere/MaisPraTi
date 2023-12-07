@@ -1,5 +1,9 @@
 package repository;
 
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.EntityManagerFactory;
+import jakarta.persistence.Persistence;
+import jakarta.persistence.TypedQuery;
 import model.Student;
 
 import java.sql.Connection;
@@ -10,124 +14,82 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class StudentRepository implements Crud<Student>{
-    private Connection connection;
+
+    EntityManagerFactory factory = Persistence.createEntityManagerFactory("school");
 
     @Override
     public void create(Student student) {
+        EntityManager manager = factory.createEntityManager();
 
-        String sql = "INSERT INTO student(name, age) VALUES(?, ?)";
-        connection = Connects.getConnects();
-        try(
-                PreparedStatement pstmt = connection.prepareStatement(sql)){
-            pstmt.setString(1, student.getName());
-            pstmt.setInt(2, student.getAge());
+        try{
+            manager.getTransaction().begin();
+            manager.persist(student);
+            manager.getTransaction().commit();
+        }finally {
+            manager.close();
 
-            int result = pstmt.executeUpdate();
-            if (result > 0){
-                System.out.println("Successful student registration!");
-            }else {
-                System.out.println("Error when inserting student!");
-            }
-        }catch(SQLException e){
-            System.out.println(e.getMessage());
         }
-
-        Connects.closeConnects(this.connection);
     }
 
     @Override
-    public void update(Student student) {
+    public void update(Student studentAtual) {
+        EntityManager manager = factory.createEntityManager();
 
-        String sql = "UPDATE student SET name = ?, age = ? WHERE id = ?";
-        connection = Connects.getConnects();
-        try(
-                PreparedStatement pstmt = connection.prepareStatement(sql)){
-            pstmt.setString(1, student.getName());
-            pstmt.setInt(2, student.getAge());
-            pstmt.setInt(3, student.getId());
-
-            int result = pstmt.executeUpdate();
-            if (result > 0){
-                System.out.println("Successful update student!");
-            }else {
-                System.out.println("Error when updating student!");
-            }
-        }catch (SQLException e){
-            System.out.println(e.getMessage());
+        try{
+            Student student = manager.find(Student.class, studentAtual.getId());
+            manager.getTransaction().begin();
+            student.setAge(studentAtual.getAge());
+            student.setName(studentAtual.getName());
+            manager.getTransaction().commit();
+        }finally {
+            manager.close();
         }
 
-
-        Connects.closeConnects(this.connection);
     }
 
     @Override
     public void delete(int id) {
+        EntityManager manager = factory.createEntityManager();
 
-        String sql = "DELETE FROM student WHERE id = " + id;
-        connection = Connects.getConnects();
+        try{
+            Student student = manager.find(Student.class, id);
+            manager.getTransaction().begin();
+            manager.remove(student);
+            manager.getTransaction().commit();
 
-        try(PreparedStatement pstmt = connection.prepareStatement(sql)){
-
-            int result = pstmt.executeUpdate();
-            if (result > 0){
-                System.out.println("Successful removal student!");
-            }else{
-                System.out.println("Error when removing student!");
-            }
-        }catch (SQLException e){
-            System.out.println(e.getMessage());
+        }finally {
+            manager.close();
         }
 
-        Connects.closeConnects(this.connection);
+
     }
 
     @Override
     public List<Student> readAll() {
+        EntityManager manager = factory.createEntityManager();
 
-        List<Student> students = new ArrayList<>();
-        String sql = "SELECT * FROM student";
-        connection = Connects.getConnects();
+        List<Student> result = new ArrayList<>();
 
-        try(PreparedStatement pstmt = connection.prepareStatement(sql)){
-            ResultSet rs = pstmt.executeQuery();
+        try{
+            String jpql = "SELECT s FROM Student s";
+            TypedQuery<Student> query = manager.createQuery(jpql, Student.class);
 
-            while (rs.next()){
-                Student student = new Student();
-                student.setId(rs.getInt("id"));
-                student.setName(rs.getString("name"));
-                student.setAge(rs.getInt("age"));
-
-                students.add(student);
-            }
-        }catch (SQLException e){
-            System.out.println(e.getMessage());
+            result = query.getResultList();
+        }finally {
+            manager.close();
         }
-        Connects.closeConnects(this.connection);
-
-        return students;
+        return result;
     }
 
     @Override
     public Student readById(int id) {
+        EntityManager manager = factory.createEntityManager();
 
-        String sql = "SELECT * FROM student WHERE id = " + id;
-        connection = Connects.getConnects();
-
-        try(PreparedStatement pstmt = connection.prepareStatement(sql)) {
-            ResultSet rs = pstmt.executeQuery();
-            if (rs.next()){
-                Student student = new Student();
-                student.setId(rs.getInt("id"));
-                student.setName(rs.getString("name"));
-                student.setAge(rs.getInt("age"));
-                return student;
-            }
-        }catch (SQLException e){
-            System.out.println(e.getMessage());
+        try {
+            return manager.find(Student.class,id);
         }finally {
-            Connects.closeConnects(this.connection);
+            manager.close();
         }
 
-        return null;
     }
 }

@@ -34,8 +34,8 @@
                         out.println("<th scope='row'>" + student.getId() + "</th>");
                         out.println("<td>" + student.getName() + "</td>");
                         out.println("<td>" + student.getAge() + "</td>");
-                        out.println("<td> <a href='/weekNine_JavaWeb-ServletJSP/editarStudent?id=" + student.getId() + "'><i class='fa-solid fa-pen'></i></a> </td>");
-                        out.println("<td> <a href='/weekNine_JavaWeb-ServletJSP/excluirStudent?id=" + student.getId() + "'><i class='fa-solid fa-trash'></i></a> </td>");
+                        out.println("<td> <a href='/weekTen_JPAHibernateLombok/editarStudent?id=" + student.getId() + "'><i class='fa-solid fa-pen'></i></a> </td>");
+                        out.println("<td> <a href='/weekTen_JPAHibernateLombok/excluirStudent?id=" + student.getId() + "'><i class='fa-solid fa-trash'></i></a> </td>");
                         out.println("</tr>");
                     }
                 %>

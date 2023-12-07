@@ -57,13 +57,13 @@ public class StudentController extends HttpServlet {
             Student student = repository.readById(id);
 
             request.setAttribute("student", student);
-            RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/views/formStudent.jsp.jsp");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/views/formStudent.jsp");
             dispatcher.forward(request, response);
         }
     }
 
     private void cadastrarAluno(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException{
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/views/formStudent.jsp.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/views/formStudent.jsp");
         dispatcher.forward(request, response);
     }
 

@@ -18,7 +18,7 @@
     %>
     <div class="container">
         <h1><%= student != null ? "Editar Aluno" : "Cadastrar Aluno" %></h1>
-        <form action="/weekNine_JavaWeb-ServletJSP/student" method="post">
+        <form action="/weekTen_JPAHibernateLombok/student" method="post">
         <input type="hidden" name="id" value="<%= id %>">
             <div class="mb-3">
                 <label for="name" class="form-label">Nome:</label>
