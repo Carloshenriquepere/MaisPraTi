@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Objects;
 
-@WebServlet(urlPatterns = {"/student","/students", "/cadastrar", "/editarStudent", "/excluirStudent"})
+@WebServlet(urlPatterns = {"/student","/students", "/register", "/editStudent", "/deleteStudent"})
 public class StudentController extends HttpServlet {
 
     StudentRepository repository = new StudentRepository();
@@ -27,18 +27,18 @@ public class StudentController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String uri = request.getRequestURI();
 
-        if (uri.contains("cadastrar")){
-            this.cadastrarAluno(request,response);
-        }else if(uri.contains("editar")){
-            this.setarAlunoParaEditar(request, response);
-        }else if(uri.contains("excluir")) {
-            this.excluirAluno(request, response);
+        if (uri.contains("register")){
+            this.registerStudent(request,response);
+        }else if(uri.contains("edit")){
+            this.setStudentEdit(request, response);
+        }else if(uri.contains("delete")) {
+            this.deleteStudent(request, response);
         }else {
-            this.listarAlunos(request,response);
+            this.listStudent(request,response);
         }
     }
 
-    private void excluirAluno(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+    private void deleteStudent(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
         String idString = request.getParameter("id");
         if(Objects.nonNull(idString) && !idString.isEmpty()){
             int id = Integer.parseInt(idString);
@@ -49,7 +49,7 @@ public class StudentController extends HttpServlet {
     }
 
 
-    private void setarAlunoParaEditar(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+    private void setStudentEdit(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
         String idString = request.getParameter("id");
         if(Objects.nonNull(idString) && !idString.isEmpty()){
             int id = Integer.parseInt(idString);
@@ -62,12 +62,12 @@ public class StudentController extends HttpServlet {
         }
     }
 
-    private void cadastrarAluno(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException{
+    private void registerStudent(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException{
         RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/views/formStudent.jsp");
         dispatcher.forward(request, response);
     }
 
-    private void listarAlunos(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+    private void listStudent(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
         List<Student> students = repository.readAll();
 
         request.setAttribute("students", students);

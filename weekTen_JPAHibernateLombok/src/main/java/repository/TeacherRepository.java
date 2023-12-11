@@ -4,26 +4,22 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
 import jakarta.persistence.TypedQuery;
-import model.Student;
+import model.Teacher;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.ArrayList;
+
 import java.util.List;
 
-public class StudentRepository implements Crud<Student>{
+public class TeacherRepository implements Crud<Teacher>{
 
     EntityManagerFactory factory = Persistence.createEntityManagerFactory("school");
-
     @Override
-    public void create(Student student) {
+    public void create(Teacher teacher) {
+
         EntityManager manager = factory.createEntityManager();
 
         try{
             manager.getTransaction().begin();
-            manager.persist(student);
+            manager.persist(teacher);
             manager.getTransaction().commit();
         }finally {
             manager.close();
@@ -32,47 +28,47 @@ public class StudentRepository implements Crud<Student>{
     }
 
     @Override
-    public void update(Student studentCurrent) {
+    public void update(Teacher teacherCurrent) {
+
         EntityManager manager = factory.createEntityManager();
 
         try{
-            Student studentOld = manager.find(Student.class, studentCurrent.getId());
+            Teacher teacherOld = manager.find(Teacher.class, teacherCurrent.getId());
             manager.getTransaction().begin();
-            studentOld.setAge(studentCurrent.getAge());
-            studentOld.setName(studentCurrent.getName());
+            teacherOld.setNameTeacher(teacherCurrent.getNameTeacher());
+            teacherOld.setDiscipline(teacherCurrent.getDiscipline());
             manager.getTransaction().commit();
         }finally {
             manager.close();
         }
-
     }
 
     @Override
     public void delete(int id) {
+
         EntityManager manager = factory.createEntityManager();
 
         try{
-            Student student = manager.find(Student.class, id);
+            Teacher teacher = manager.find(Teacher.class, id);
             manager.getTransaction().begin();
-            manager.remove(student);
+            manager.remove(teacher);
             manager.getTransaction().commit();
 
         }finally {
             manager.close();
         }
-
-
     }
 
     @Override
-    public List<Student> readAll() {
+    public List<Teacher> readAll() {
+
         EntityManager manager = factory.createEntityManager();
 
-        List<Student> result = null;
+        List<Teacher> result = null;
 
         try{
-            String jpql = "SELECT s FROM Student s";
-            TypedQuery<Student> query = manager.createQuery(jpql, Student.class);
+            String jpql = "SELECT t FROM Teacher t";
+            TypedQuery<Teacher> query = manager.createQuery(jpql, Teacher.class);
 
             result = query.getResultList();
         }finally {
@@ -82,11 +78,12 @@ public class StudentRepository implements Crud<Student>{
     }
 
     @Override
-    public Student readById(int id) {
+    public Teacher readById(int id) {
+
         EntityManager manager = factory.createEntityManager();
 
         try {
-            return manager.find(Student.class,id);
+            return manager.find(Teacher.class,id);
         }finally {
             manager.close();
         }
