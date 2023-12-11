@@ -17,7 +17,7 @@
         String id = teacher != null ? teacher.getId().toString() : "";
     %>
     <div class="container">
-        <h1><%= student != null ? "Edit Teacher" : "Register Teacher" %></h1>
+        <h1><%= teacher != null ? "Edit Teacher" : "Register Teacher" %></h1>
         <form action="/weekTen_JPAHibernateLombok/teacher" method="post">
         <input type="hidden" name="id" value="<%= id %>">
             <div class="mb-3">
